@@ -1,7 +1,9 @@
 """
 NoodleScript Lexing Code for libspaghetti
 """
-from . import error
+import libspaghetti
+import libspaghetti.error
+
 supported_functions = ["serve"]
 
 def lex_line(line):
@@ -14,4 +16,12 @@ def lex_line(line):
         if lexed_line[1] in supported_functions:
             return lexed_line
         else:
-            return [error("UNKNOWN")]
+            libspaghetti.error.undefined()
+            return "err"
+    elif line[0] == "#":
+        if line[1] == " ":
+            lexed_line = line.split("# ")
+        else:
+            lexed_line = line.split("#")
+        lexed_line[0] = "comment"
+        return lexed_line
