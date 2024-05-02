@@ -3,6 +3,9 @@ def unknown():
 
 def undefined():
     print("Undefined function")
+    
+def syntax():
+    print("Syntax error")
 
 # Legacy code for legacy systems
 def error(type):
