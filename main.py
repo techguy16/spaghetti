@@ -2,9 +2,7 @@ import libspaghetti.noodlescript.lexer
 import libspaghetti.noodlescript.runner
 import libspaghetti.version
 
-print(libspaghetti.version.short())
-print(libspaghetti.version.creator())
-print()
+print(f"{libspaghetti.version.short()}\n{libspaghetti.version.creator()}\n")
 
 while True:
     line = input("> ")

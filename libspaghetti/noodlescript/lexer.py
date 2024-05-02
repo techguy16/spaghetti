@@ -28,7 +28,7 @@ def lex_line(line):
         lexed_line = libspaghetti.utils.line_type(lexed_line, "func")
         
         if lexed_line[2][0] == "\"":
-            lexed_line[2] = lexed_line[2][1:-1]
+            lexed_line[2] = libspaghetti.utils.str2raw(lexed_line[2])
             
         if lexed_line[1] in supported_functions:
             return lexed_line
