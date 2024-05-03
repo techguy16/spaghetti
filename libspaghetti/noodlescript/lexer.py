@@ -33,7 +33,6 @@ def lex_line(line):
         if lexed_line[1] in supported_functions:
             return lexed_line
         else:
-            libspaghetti.error.undefined()
             return "err"
     elif line[0:5] == "noodle":
         return "e"

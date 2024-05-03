@@ -1,0 +1,2 @@
+serve("Hello world")
+serve("The first spaghetti interpreter program")
