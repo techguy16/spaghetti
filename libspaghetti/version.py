@@ -1,3 +1,5 @@
+from platform import python_version
+
 VER = 0.01
 LIBSPAGHETTI_VER = 0.1
 CREATOR = "techguy16"
@@ -7,3 +9,6 @@ def short():
 
 def creator():
     return f"Created by {CREATOR}"
+
+def python_ver():
+    return python_version()

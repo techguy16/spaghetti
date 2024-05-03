@@ -5,3 +5,6 @@ def line_type(line, type):
 
 def str2raw(str):
     return str[1:-1]
+
+def str2int(str):
+    return int(str)
