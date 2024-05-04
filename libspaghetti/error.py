@@ -1,11 +1,20 @@
-def unknown():
-    print("Unknown error")
+from colorama import init as colorama_init # Col
+from colorama import Fore                  # our
+from colorama import Style                 # ama
 
-def undefined():
-    print("Undefined function")
+colorama_init()
+
+def unknown():
+    print(f"{Style.BRIGHT}{Fore.RED}Unknown error{Style.RESET_ALL}")
+
+def undefined(line=None):
+    if line is not None:
+        print(f"{Style.BRIGHT}{Fore.RED}Undefined function at line with code {Style.RESET_ALL}{Fore.RED}{line}")
+    else:
+        print(f"{Style.BRIGHT}{Fore.RED}Undefined function{Style.RESET_ALL}")
     
 def syntax():
-    print("Syntax error")
+    print(f"{Style.BRIGHT}{Fore.RED}Syntax error{Style.RESET_ALL}")
 
 # Legacy code for legacy systems
 def error(type):

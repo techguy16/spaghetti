@@ -1,5 +1,6 @@
 import libspaghetti
 import libspaghetti.error
+import libspaghetti.variables
 
 def run_line(line):
     if not line == None:
@@ -13,7 +14,11 @@ def run_line(line):
                 print(abs(int(line[2])))
         elif line[0] == "comment":
             return "" 
+        elif line == "e":
+            print("Variables in dev")
+        elif line[0] == "var":
+            libspaghetti.variables.add_variable(line[1], line[2], line[3])
         else:
-            return libspaghetti.error.undefined()
+            return libspaghetti.error.undefined(line)
     else:
         return libspaghetti.error.undefined()
