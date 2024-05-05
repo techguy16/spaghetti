@@ -7,4 +7,5 @@ def run_file(file):
     file.close()
     
     for line in filelines:
+        print(libspaghetti.noodlescript.lexer.lex_line(line))
         libspaghetti.noodlescript.runner.run_line(libspaghetti.noodlescript.lexer.lex_line(line))

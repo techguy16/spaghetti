@@ -18,6 +18,8 @@ def run_line(line):
             print("Variables in dev")
         elif line[0] == "var":
             libspaghetti.variables.add_variable(line[1], line[2], line[3])
+        elif line[0] == "varReturnInfo":
+            print(line[1])
         else:
             return libspaghetti.error.undefined(line)
     else:

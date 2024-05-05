@@ -15,7 +15,7 @@ def is_var(name):
         return False
     
 def get_var_content(name):
-    if name[1] in variables:
+    if name in variables:
         return variables[name]
     else:
         return []

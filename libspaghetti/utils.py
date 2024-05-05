@@ -8,3 +8,13 @@ def str2raw(str):
 
 def str2int(str):
     return int(str)
+
+def contentType(content):
+    try:
+        int(content)  # Try to convert the string to an integer
+        return "int"
+    except ValueError:
+        if content == "true" or "True" or "false" or "False":
+            return "bool"
+        else:
+            return "str"

@@ -1,0 +1,5 @@
+noodle spagbowl = "Rick Astley"
+noodle sauce = "Never Gonna Give You Up"
+
+serve("Hola!")
+serve("Welcome to a random program.")
