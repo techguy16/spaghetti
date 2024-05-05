@@ -25,7 +25,15 @@ def lex_line(line):
     """
     if line is not None:
         if "(" and ")" in line:
-            lexed_line = line.replace("(", "'split'", 1).replace(")", "'split'", -1)
+            if "(noodle " in line:
+                line_mod = line.split("(noodle ")[1].split(")")
+                del line_mod[1]
+                replace_with = libspaghetti.variables.get_var_content(line_mod[0])[0]
+                to_replace = f"noodle {line_mod[0]}"
+                lexed_line = line.replace(to_replace, replace_with)
+            else:
+                lexed_line = line
+            lexed_line = lexed_line.replace("(", "'split'", 1).replace(")", "'split'", -1)
             lexed_line = lexed_line.split("'split'")
             lexed_line = libspaghetti.utils.line_type(lexed_line, "func")
         
