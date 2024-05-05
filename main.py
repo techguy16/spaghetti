@@ -13,6 +13,8 @@ colorama_init()
 
 libspaghetti.variables.reset()
 
+output_lexed_code = libspaghetti.cli.parser.output_lexed_code()
+
 if libspaghetti.cli.parser.get_file_to_run() is not None:
     print(f'Running file {libspaghetti.cli.parser.get_file_to_run()}')
     libspaghetti.cli.runfile.run_file(libspaghetti.cli.parser.get_file_to_run())
@@ -21,4 +23,6 @@ else:
 
     while True:
         line = input(f"{Fore.MAGENTA}> {Fore.RESET}")
+        if output_lexed_code:
+            print(f"{Fore.BLUE}{str(libspaghetti.noodlescript.lexer.lex_line(line)).replace('\',', ",\n")}{Fore.RESET}\n")
         libspaghetti.noodlescript.runner.run_line(libspaghetti.noodlescript.lexer.lex_line(line))
