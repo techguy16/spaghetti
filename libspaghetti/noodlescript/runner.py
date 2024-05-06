@@ -3,7 +3,7 @@ import libspaghetti.error
 import libspaghetti.variables
 
 def run_line(line):
-    if not line == None:
+    if line is not None:
         if line[0] == "func":
             if line[1] == "serve":
                 print(line[2])
@@ -23,4 +23,7 @@ def run_line(line):
         else:
             return libspaghetti.error.undefined(line)
     else:
-        return libspaghetti.error.undefined()
+        if line == None:
+            return ""
+        else:
+            return libspaghetti.error.undefined()
