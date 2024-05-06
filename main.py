@@ -2,6 +2,7 @@ import libspaghetti.cli.runfile
 import libspaghetti.noodlescript.lexer
 import libspaghetti.noodlescript.runner
 import libspaghetti.cli.parser
+import libspaghetti.math
 import libspaghetti.variables
 import libspaghetti.version
 
