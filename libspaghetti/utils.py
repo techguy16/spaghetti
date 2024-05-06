@@ -4,7 +4,7 @@ def line_type(line, type):
     return line
 
 def str2raw(str):
-    return str[1:-1]
+    return str[1:-2]
 
 def str2int(str):
     return int(str)

@@ -16,7 +16,7 @@ libspaghetti.variables.reset()
 output_lexed_code = libspaghetti.cli.parser.output_lexed_code()
 
 if libspaghetti.cli.parser.get_file_to_run() is not None:
-    print(f'{Style.BRIGHT}{Fore.BLUE}> {Style.RESET_ALL}{Fore.GREEN}Running file {Style.BRIGHT}"{libspaghetti.cli.parser.get_file_to_run()}"{Style.RESET_ALL}')
+    print(f'{Style.BRIGHT}{Fore.BLUE}> {Style.RESET_ALL}{Fore.GREEN}Running file {Fore.MAGENTA}{Style.BRIGHT}"{libspaghetti.cli.parser.get_file_to_run()}"{Style.RESET_ALL}')
     libspaghetti.cli.runfile.run_file(libspaghetti.cli.parser.get_file_to_run())
 else:
     print(f"{Style.BRIGHT}{Fore.BLUE}{libspaghetti.version.short()}\nRunning on Python {libspaghetti.version.python_ver()}\n{Style.RESET_ALL}{libspaghetti.version.creator()}\n")
