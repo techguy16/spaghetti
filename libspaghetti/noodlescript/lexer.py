@@ -44,8 +44,11 @@ def lex_line(line):
                 return lexed_line
             else:
                 return line
-        elif line[0:6] == "noodle":
-            var_info = line.split("noodle ")[1]
+        elif (line[0:6] == "noodle") or (line[0:13] == "frozen noodle"):
+            if line[0:13] == "frozen noodle":
+                var_info = line.split("frozen noodle ")[1]
+            else:
+                var_info = line.split("noodle ")[1]
             var_split = var_info.split(" ")
             if not len(var_split) == 1:
                 var_info = var_info.split(" = ")
@@ -55,14 +58,22 @@ def lex_line(line):
                     var_info.insert(3,"int")
                 except ValueError:
                     var_info.insert(3,'str')
+                if line[0:13] == "frozen noodle":
+                        var_info.insert(4, "frozen")
                 return var_info
             else:
                 if libspaghetti.variables.is_var(var_info):
                     var_info = libspaghetti.variables.get_var_content(var_info)
-                    var_info.insert(0,"varReturnInfo")
+                    if not var_info[0] == "varReturnInfo":
+                        var_info.insert(0,"varReturnInfo")
+                    if line[0:13] == "frozen noodle":
+                        if not "frozen" in var_info:
+                            var_info.insert(4, "frozen")
                     return var_info
                 else:
-                    return "e"
+                    var_info = libspaghetti.variables.get_var_content(var_info)
+                    return var_info
+
         elif line[0] == "#":
             if line[1] == " ":
                 lexed_line = line.split("# ")

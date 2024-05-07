@@ -17,7 +17,11 @@ def run_line(line):
         elif line == "e":
             print("Variables in dev")
         elif line[0] == "var":
-            libspaghetti.variables.add_variable(line[1], line[2], line[3])
+            if len(line) > 4:
+                if line[4] == "frozen":
+                    libspaghetti.variables.add_variable(line[1], line[2], line[3], line[4])
+            else:
+                libspaghetti.variables.add_variable(line[1], line[2], line[3])
         elif line[0] == "varReturnInfo":
             print(line[1])
         else:

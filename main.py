@@ -6,9 +6,8 @@ import libspaghetti.math
 import libspaghetti.variables
 import libspaghetti.version
 
-from colorama import init as colorama_init # Col
-from colorama import Fore                  # our
-from colorama import Style                 # ama
+from colorama import init as colorama_init # Colo
+from colorama import Fore, Style           # rama
 
 colorama_init()
 
